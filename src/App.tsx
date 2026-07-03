@@ -154,7 +154,7 @@ export default function App() {
               transition={{ duration: 0.8, delay: 0.35 }}
               className="mx-auto mt-7 max-w-2xl text-sm sm:text-base md:text-lg text-soft-clay leading-relaxed"
             >
-              "Not boyfriend and girlfriend yet. Not husband and wife yet. But for years, we have been choosing each other, trusting God's timing, and building a love worth waiting for." <Heart className="inline-block h-4 w-4 text-love-red align-middle" />
+              "For years, we have been choosing each other, trusting God's timing, and building a love worth waiting for." <Heart className="inline-block h-4 w-4 text-love-red align-middle" />
             </motion.p>
 
             <motion.p
