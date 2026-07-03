@@ -10,7 +10,7 @@ import BentoGrid from './components/BentoGrid';
 import InteractionCenter from './components/InteractionCenter';
 import Gallery from './components/Gallery';
 import AudioPlayer from './components/AudioPlayer';
-import COUPLE_PORTRAIT from './assets/images/couple_portrait.jpg';
+import COUPLE_PORTRAIT from './assets/images/cover.png';
 
 export default function App() {
   
