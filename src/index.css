@@ -21,6 +21,33 @@ body {
   overflow-x: hidden;
 }
 
+.app-root {
+  background-color: var(--color-warm-cream);
+  color: var(--color-gentle-slate);
+}
+
+/* Custom thin scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #faf5ee;
+}
+::-webkit-scrollbar-thumb {
+  background: #e0d5c8;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #cca99e;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
 /* Custom thin scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
