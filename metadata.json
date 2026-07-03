@@ -1,0 +1,6 @@
+{
+  "name": "Love Found Us",
+  "description": "The gentle and beautiful love story of Bry and Lyka. A story of choosing each other, patience, trusting God's timing, and building a love worth waiting for.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
