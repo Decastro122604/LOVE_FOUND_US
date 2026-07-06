@@ -25,7 +25,15 @@ export default function App() {
   const [scrollY, setScrollY] = useState(0);
   const [typewriterText, setTypewriterText] = useState('');
   const [relationshipAge, setRelationshipAge] = useState({ years: 0, months: 0, days: 0, totalDays: 0 });
-  const typewriterFull = 'A gentle love letter in soft motion.';
+  const messages = [
+  'Every chapter became beautiful when God wrote you into my story.',
+  'A love story written by God and lived by Bry & Lyka.',
+  'Still choosing each other, every single day.',
+  'Seven years later, you are still my favorite answered prayer.',
+  'Turn the pages and discover the memories that built our forever.',
+  'Through every season, every challenge, and every blessing—we stayed.',
+  'A journey of faith, patience, and a love that never stopped growing.',
+];;
   const [isLoading, setIsLoading] = useState(true);
 
 useEffect(() => {
@@ -72,16 +80,30 @@ useEffect(() => {
   }, []);
 
   useEffect(() => {
-    let current = 0;
-    const interval = setInterval(() => {
-      setTypewriterText(typewriterFull.slice(0, current + 1));
-      current += 1;
-      if (current === typewriterFull.length) {
-        clearInterval(interval);
+  let messageIndex = 0;
+  let charIndex = 0;
+
+  const typeMessage = () => {
+    const currentMessage = messages[messageIndex];
+
+    const typingInterval = setInterval(() => {
+      setTypewriterText(currentMessage.slice(0, charIndex + 1));
+      charIndex++;
+
+      if (charIndex >= currentMessage.length) {
+        clearInterval(typingInterval);
+
+        setTimeout(() => {
+          charIndex = 0;
+          messageIndex = (messageIndex + 1) % messages.length;
+          typeMessage();
+        }, 2500);
       }
-    }, 60);
-    return () => clearInterval(interval);
-  }, []);
+    }, 50);
+  };
+
+  typeMessage();
+}, []);
 
   // Smooth scroll handler
   const handleScrollToStory = () => {
