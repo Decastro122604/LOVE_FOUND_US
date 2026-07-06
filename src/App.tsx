@@ -5,12 +5,20 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
-import { Heart, Sparkles, ArrowDown, Compass, Cross, Shield } from 'lucide-react';
+import {
+  Heart,
+  Sparkles,
+  ArrowDown,
+  Cross,
+} from 'lucide-react';
+
 import Timeline from './components/Timeline';
 import BentoGrid from './components/BentoGrid';
 import InteractionCenter from './components/InteractionCenter';
 import Gallery from './components/Gallery';
 import AudioPlayer from './components/AudioPlayer';
+import LoadingScreen from './components/LoadingScreen';
+
 import COUPLE_PORTRAIT from './assets/images/cover.png';
 
 export default function App() {
@@ -18,6 +26,15 @@ export default function App() {
   const [typewriterText, setTypewriterText] = useState('');
   const [relationshipAge, setRelationshipAge] = useState({ years: 0, months: 0, days: 0, totalDays: 0 });
   const typewriterFull = 'A gentle love letter in soft motion.';
+  const [isLoading, setIsLoading] = useState(true);
+
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setIsLoading(false);
+  }, 3000);
+
+  return () => clearTimeout(timer);
+}, []);
 
   useEffect(() => {
     const computeRelationshipAge = () => {
@@ -73,9 +90,13 @@ export default function App() {
       section.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  
+  if (isLoading) {
+  return <LoadingScreen isLoading={true} />;
+ }
 
   return (
-    <div className="relative min-h-screen selection:bg-rose-gold/30 selection:text-soft-clay antialiased app-root">
+  <div className="relative min-h-screen selection:bg-rose-gold/30 selection:text-soft-clay antialiased app-root">
       {/* Background Decorative Blobs */}
       <div className="absolute top-0 left-0 right-0 h-[600px] bg-gradient-to-b from-rose-gold/10 via-rose-gold/5 to-transparent pointer-events-none" />
       
@@ -328,7 +349,7 @@ export default function App() {
             <span>"In His perfect timing, everything becomes beautiful"</span>
           </div>
         </div>
-      </footer>
+            </footer>
     </div>
   );
 }
