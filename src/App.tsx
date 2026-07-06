@@ -290,7 +290,7 @@ useEffect(() => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.7 }}
-              className="absolute -bottom-10 right-0 w-56 rounded-[2rem] border border-rose-gold/10 bg-white/95 p-4 shadow-xl"
+              className="absolute top-6 right-6 w-56 rounded-[2rem] border border-rose-gold/10 bg-white/95 p-4 shadow-xl"
             >
               <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-love-red font-semibold mb-2">
                 A whispered note
